@@ -16,9 +16,9 @@ if args.c:
 elif args.f:
     browser = webdriver.Firefox(service_log_path="/dev/null") # if browser you choose is firefox
 elif args.s:
-    browser = webdriver.Safari(service_log_path="/dev/null") # if browser you choose is safari
+    browser = webdriver.Safari() # if browser you choose is safari
 else:
-    browser = webdriver.Safari(service_log_path="/dev/null") # default browser
+    browser = webdriver.Safari() # default browser
 
 # service_log_path="/dev/null" is to remove log files after the use of a driver
 # make it fullscreen
