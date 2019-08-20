@@ -18,7 +18,7 @@ elif args.f:
 elif args.s:
     browser = webdriver.Safari() # if browser you choose is safari
 else:
-    browser = webdriver.Safari() # default browser
+    browser = webdriver.Chrome() # default browser
 
 # service_log_path="/dev/null" is to remove log files after the use of a driver
 # make it fullscreen
