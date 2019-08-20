@@ -12,14 +12,15 @@ args = parser.parse_args()
 
 # setting browser
 if args.c:
-    browser = webdriver.Chrome(executable_path="driver_logs/") # if browser you choose is chrome
+    browser = webdriver.Chrome(service_log_path="/dev/null") # if browser you choose is chrome
 elif args.f:
-    browser = webdriver.Firefox(executable_path="driver_logs/") # if browser you choose is firefox
+    browser = webdriver.Firefox(service_log_path="/dev/null") # if browser you choose is firefox
 elif args.s:
-    browser = webdriver.Safari(executable_path="driver_logs/") # if browser you choose is safari
+    browser = webdriver.Safari(service_log_path="/dev/null") # if browser you choose is safari
 else:
-    browser = webdriver.Safari(executable_path="driver_logs/") # default browser
+    browser = webdriver.Safari(service_log_path="/dev/null") # default browser
 
+# service_log_path="/dev/null" is to remove log files after the use of a driver
 # make it fullscreen
 browser.maximize_window()
 
