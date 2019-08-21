@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from selenium import webdriver
+from selenium.common.exceptions import SessionNotCreatedException
 import argparse
 import time
 
@@ -21,7 +22,11 @@ if args.c:
 elif args.f:
     browser = webdriver.Firefox(service_log_path="/dev/null") # if browser you choose is firefox
 elif args.s:
-    browser = webdriver.Safari() # if browser you choose is safari
+    try:
+        browser = webdriver.Safari() # if browser you choose is safari
+    except SessionNotCreatedException:
+        print("google: error: You must enable the 'Allow Remote Automation' option in Safari")
+        exit()
 else:
     browser = webdriver.Chrome() # default browser
 
